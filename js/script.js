@@ -71,4 +71,4 @@ $(window).scroll(function(){
 $(document).click(function (e) {
     if(!$(e.target).closest('#mobile-menu').length){
       $("#mobile-menu").removeClass('open');
-    }});
+}});
