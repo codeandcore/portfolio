@@ -9,7 +9,7 @@ function main_top(){
 }
 function mobile_menu(){
     var mob_menu = $('header .header-bottom .menu-area').html();
-    $('#mobile-menu .menu-area').append(mob_menu);
+    $('#mobile_menu .menu-area').append(mob_menu);
 }
 
 $(window).on('load',function(){
@@ -32,22 +32,31 @@ $(document).ready(function(){
     });
     $( '.page-menu ul a').on( 'click', function(e){
         var href = $(this).attr( 'href' );
-        $( 'html, body' ).animate({
+        $( 'html, body' ).animate({ 
               scrollTop: $( href ).offset().top
         }, '1000' );
         e.preventDefault();
-        $('#mobile-menu').removeClass('open');
+        $('#mobile_menu').removeClass('open');
       });
       $('header .hamburger').on('click', function(e){
         e.stopPropagation();
-        $('#mobile-menu').addClass('open');
+        $('#mobile_menu').addClass('open');
     });
-    $('#mobile-menu .close-menu').on('click', function(){
-        $('#mobile-menu').removeClass('open');
+    $('header .header-top-area .search ').on('click', function(e){
+        e.stopPropagation();
+        $('#search_box').toggleClass('open');
+    });
+    $('#mobile_menu .close-menu').on('click', function(){
+        $('#mobile_menu').removeClass('open');
+    });
+    $('.project-gallery .project-box > a').on('click', function(){
+        var img_src = $(this).children('img').attr('src');
+        $('.portfolio-section .portfolio-main-img-box .img-box img').attr('src',img_src);
     });
     setTimeout(function() {
         $('#preloader').removeClass('show');
-    }, 1000);
+    }, 1200);  
+
 });
 
 $(window).on('resize',function(){
@@ -69,6 +78,10 @@ $(window).scroll(function(){
     }
 });
 $(document).click(function (e) {
-    if(!$(e.target).closest('#mobile-menu').length){
-      $("#mobile-menu").removeClass('open');
-}});
+    if(!$(e.target).closest('#mobile_menu').length){
+      $("#mobile_menu").removeClass('open');
+    }
+    if(!$(e.target).closest('#search_box').length){
+        $("#search_box").removeClass('open');
+      }
+});

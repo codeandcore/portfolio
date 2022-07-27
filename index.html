@@ -12,7 +12,7 @@
         <meta name="msapplication-navbutton-color" content="#000">
         <!-- iOS Safari -->
         <meta name="apple-mobile-web-app-status-bar-style" content="#000">
-        <meta property="og:image" itemprop="image" content="images/Screenshot.png">
+        <meta property="og:image" content="images/Screenshot.png">
         <title>Portfolio</title>
         <link rel="mask-icon" href="images/favicon.ico" color="white"> 
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
@@ -22,13 +22,12 @@
     </head>
     <body>
         <div id="preloader" class="show">
-           
             <div class="loader">
                 <svg>
                     <defs>
                       <filter id="goo">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" result="gooey" />
+                        <feColorMatrix in="blur"  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" result="gooey" />
                         <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
                       </filter>
                     </defs>
@@ -71,9 +70,15 @@
                     </div>
                 </div>
             </header>
-            <div id="mobile-menu">
+            <div id="mobile_menu">
                 <a href="javascript:;" class="close-menu"><img src="images/close-icon.svg" alt="close-icon"></a>
                 <div class="menu-area page-menu"></div>
+            </div>
+            <div id="search_box">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="search-btn" type="submit"><img src="images/Search.svg" alt="search"></button>
+                  </form>
             </div>
             <!-- HEADER END-->
             <!---->
@@ -239,7 +244,7 @@
                                 <h2>Contact Us</h2>
                                 <h3>Excepteur sint occaecat cupidatat non proident, </h3>
                            </div>
-                           <form action="">
+                           <form action="get">
                                 <div class="inner-form d-flex align-items-center justify-content-between">
                                     <div class="input-box">
                                         <input type="text" placeholder="Required Field" required class="form-control">
@@ -271,7 +276,7 @@
                         <div class="col-4">
                             <div class="address-box">
                                 <p>497 Evergreen Rd. Roseville, CA 95673 </p>
-                                <a href="tel:+44 345 678 903">+44 345 678 903</a>
+                                <a href="tel:+44345678903">+44 345 678 903</a>
                                 <a href="mail-to:adobexd@mail.com">adobexd@mail.com</a>
                             </div>
                         </div>
